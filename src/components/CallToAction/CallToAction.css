@@ -1,0 +1,16 @@
+.cta {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta__text {
+  color: #222;
+  font-size: 3rem;
+}
+
+.cta__btn {
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
+}

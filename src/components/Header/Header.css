@@ -1,0 +1,43 @@
+.header {
+  background-color: #51BB7B;
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__options {
+  text-transform: uppercase;
+}
+.header__options > a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 3rem;
+  font-size: 1.7rem;
+}
+
+.header__options > a:hover {
+  color: #222;
+  font-weight: bold;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__login {
+  background-color: #fff;
+  color: #51BB7B;
+  font-weight: bold;
+  margin: 0 3rem 0 14rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  /* border: 2px solid #51BB7B; */
+  border-radius: 100px;
+  padding: .4rem 3rem;
+}
+
+.header__login:hover {
+  color: #222;
+  font-weight: bold;
+}
