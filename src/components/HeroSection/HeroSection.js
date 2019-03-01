@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../App/App.css";
@@ -11,9 +12,9 @@ const HeroSection = () => {
         <h2 className="hero__text">
           Send parcels easily, anywhere, anytime, fast.
         </h2>
-        <a href="./signup.html" className="hero__btn">
+        <Link to="/signup" className="hero__btn">
           Get started
-        </a>
+        </Link>
       </div>
     </section>
   );
