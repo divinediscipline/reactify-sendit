@@ -1,0 +1,35 @@
+.header__dashboard {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  margin-right: 3rem;
+  font-size: 1.7rem;
+}
+
+.header__dashboard:hover {
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-dropdown {
+  margin: 0 6rem 0 9rem;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.drop-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #205334;
+}
+
+.drop-item {
+  padding: 1rem 2rem;
+}
+
+.auth-menu {
+  text-align: center;
+  font-size: 1.5rem;
+}

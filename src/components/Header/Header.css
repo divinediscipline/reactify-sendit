@@ -5,19 +5,19 @@
   justify-content: space-between;
 }
 
-.header__options {
+.header__how-it-works {
   text-transform: uppercase;
-}
-.header__options > a {
   text-decoration: none;
   color: #fff;
-  margin-left: 3rem;
+  display: inline-block;
+  margin-right: 3rem;
   font-size: 1.7rem;
 }
 
-.header__options > a:hover {
+.header__how-it-works:hover {
   color: #222;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .header__nav {

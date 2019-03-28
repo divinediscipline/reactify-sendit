@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { signupAction } from '../../actions/authAction';
 
 import Logo from '../Logo/Logo';
 import '../App/App.css';
 import './SignUp.css';
-import { Link } from 'react-router-dom';
 
 class SignUp extends Component {
   state = {
@@ -20,16 +20,6 @@ class SignUp extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    // this.setState({
-    //   account: {
-    //     firstname: "",
-    //     lastname: "",
-    //     email: "",
-    //     phonenumber: "",
-    //     password: "",
-    //     password_confirmation: ""
-    //   }
-    // });
     const data = {
       firstname: this.state.account.firstname,
       lastname: this.state.account.lastname,
@@ -135,9 +125,9 @@ class SignUp extends Component {
             </button>
             <p className="signup-form__login-link-text">
               Already have an account?
-              <a href="./login.html" className="signup-form__login-link">
+              <Link to="/login" className="signup-form__login-link">
                 Log in
-              </a>
+              </Link>
             </p>
           </form>
         </div>
@@ -146,7 +136,7 @@ class SignUp extends Component {
   }
 }
 const mapStateToProps = state => ({
-  signup: state.auth,
+  signup: state.auth
 });
 
 export default connect(

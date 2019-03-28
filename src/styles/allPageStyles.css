@@ -1,0 +1,52 @@
+/* PrimaryHeading styles */
+.main-content__heading-primary {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 6rem;
+  color: #205334;
+  font-family: 'Pattaya', sans-serif;
+}
+
+.main-content__heading-primary::after {
+  content: '';
+  height: 2px;
+  width: 7%;
+  background: #51BB7B;
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* CreateOrderButton styles */
+.create-order-btn {
+  background-color: #51BB7B;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  display: inline-block;
+  margin-top: 1rem;
+  letter-spacing: .2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+
+  position: fixed;
+  right: 8rem;
+  top: 9rem;
+}
+
+.create-order-btn:hover {
+  background-color: #8ed3a9;
+}
+
+.create-order-btn:active,
+.create-order-btn:link,
+.create-order-btn:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-add-desktop {
+  margin-right: 1rem;
+}
+
+/* .header__login {
+      background-color: red;
+  } */

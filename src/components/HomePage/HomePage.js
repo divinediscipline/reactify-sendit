@@ -6,10 +6,10 @@ import FeaturesSection from '../FeaturesSection/FeaturesSection';
 import CallToAction from '../callToAction/CallToAction';
 import Footer from '../Footer/Footer';
 
-const HomePage = () => {
+const HomePage = ({ history }) => {
   return (
     <div>
-      <Header />
+      <Header history={history} />
       <HeroSection />
       <FeaturesSection />
       <CallToAction />

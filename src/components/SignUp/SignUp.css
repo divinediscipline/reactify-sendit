@@ -1,3 +1,4 @@
+/* this style applies in signin.css too */
 .wrapper-gradient-bg {
   background-image: linear-gradient(to right bottom, rgba(142, 211, 169, 1), rgba(42, 107, 68, 1));
   background-size: cover;
@@ -11,10 +12,12 @@
   overflow: auto;
 }
 
+/* this style applies in signin.css too */
 .logo-box {
   display: block;
 }
 
+/* this style applies in signin.css too */
 .main-section {
   max-width: 55rem;
   margin: 2rem auto 5rem;
@@ -22,12 +25,12 @@
   border-radius: 2rem;
 }
 
+/* this style applies in signin.css too */
 label {
   font-size: 1.4rem;
   color: #555;
   font-weight: bold;
   display: inline-block;
-  /* padding-top: 3rem; */
   margin-top: 1.2rem;
 }
 
