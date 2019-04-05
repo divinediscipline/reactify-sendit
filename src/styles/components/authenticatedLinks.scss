@@ -1,5 +1,5 @@
 .header__dashboard {
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-decoration: none;
   color: #fff;
   display: inline-block;
@@ -29,7 +29,14 @@
   padding: 1rem 2rem;
 }
 
+
+.drop-item:hover {
+  background-color: #ccc;
+}
+
 .auth-menu {
   text-align: center;
   font-size: 1.5rem;
+  background-color: whitesmoke;
+  padding: 0;
 }

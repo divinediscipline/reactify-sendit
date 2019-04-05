@@ -1,18 +1,19 @@
 import axios from 'axios';
 
-const fetchParcelOrdersAction = () => async (dispatch) => {
-  dispatch({ type: 'FETCH_USER_PARCELS_REQUEST_LOADING' });
+const viewSingleOrderAction = () => async (dispatch) => {
+  dispatch({ type: 'FETCH_SINGLE_ORDER_REQUEST_LOADING' });
   try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const parcelId = urlParams.get('parcelid');
     const userToken = localStorage.getItem('token');
     const userid = localStorage.getItem('userid');
-    // console.log('printed usertoken', userToken);
     const response = await axios.get(
-      `https://thawing-woodland-89801.herokuapp.com/api/v1/users/${userid}/parcels`,
+      `https://thawing-woodland-89801.herokuapp.com/api/v1/parcels/${parcelId}`,
       { headers: { 'x-auth': userToken } },
     );
     console.log('fetchAxiosResponse', response.data);
     dispatch({
-      type: 'FETCH_USER_PARCELS_REQUEST',
+      type: 'FETCH_SINGLE_ORDER_REQUEST',
       payload: response.data,
     });
   } catch (error) {
@@ -23,4 +24,4 @@ const fetchParcelOrdersAction = () => async (dispatch) => {
   }
 };
 
-export default fetchParcelOrdersAction;
+export default viewSingleOrderAction;

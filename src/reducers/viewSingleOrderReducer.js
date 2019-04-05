@@ -1,21 +1,22 @@
 const initialState = {
   isLoading: false,
-  allUserOrders: {},
+  singleOrder: {},
   error: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_USER_PARCELS_REQUEST_LOADING':
+    case 'FETCH_SINGLE_ORDER_REQUEST_LOADING':
       return {
         ...state,
         isLoading: true,
+        singleOrder: {},
       };
-    case 'FETCH_USER_PARCELS_REQUEST':
+    case 'FETCH_SINGLE_ORDER_REQUEST':
       return {
         ...state,
         isLoading: false,
-        allUserOrders: action.payload,
+        singleOrder: action.payload,
       };
     case 'SET_ERROR_MSG':
       return { ...state, isLoading: false, error: action.payload };

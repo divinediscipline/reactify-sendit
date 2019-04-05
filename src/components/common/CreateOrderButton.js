@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CreateOrderButton = () => {
   return (
-    <Link to="/newOrder" className="create-order-btn">
+    <Link to="/new-order" className="create-order-btn">
       <FontAwesomeIcon icon="plus" className="btn-add-desktop" />
       New order
     </Link>

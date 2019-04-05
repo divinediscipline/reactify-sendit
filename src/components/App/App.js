@@ -11,12 +11,14 @@ import {
   faLock,
   faMap,
   faFighterJet,
-  faPlus
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import HomePage from '../HomePage/HomePage';
 import SignUp from '../SignUp/SignUp';
 import Dashboard from '../Dashboard/Dashboard';
 import SignIn from '../SignIn/SignIn';
+import NewOrderPage from '../Layout/NewOrderPage';
+import OrderDetailsPage from '../Layout/OrderDetailsPage';
 
 if (localStorage.getItem('token')) {
   const token = localStorage.getItem('token');
@@ -34,12 +36,14 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={SignIn} />
-            <Route path="/" component={HomePage} />
-          </Switch>
+            <Switch>
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/order-details" component={OrderDetailsPage} />
+              <Route path="/new-order" component={NewOrderPage} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/login" component={SignIn} />
+              <Route path="/" component={HomePage} />
+            </Switch>
         </BrowserRouter>
       </div>
     );
