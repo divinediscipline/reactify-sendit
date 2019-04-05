@@ -1,0 +1,15 @@
+.features__heading-primary {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 3rem;
+    color: #205334;
+  }
+  
+  .features__heading-primary::after {
+    content: '';
+    height: 2px;
+    width: 10%;
+    background: #51BB7B;
+    display: block;
+    margin: 10px auto 0;
+  }

@@ -1,0 +1,46 @@
+.features__card {
+    margin-left: 1rem;
+    flex: 1 1 18rem;
+    background-color: #addfc1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  .features__icon {
+    display: block;
+    font-size: 5rem;
+    color: #fff;
+    margin: 2.5rem 0;
+  }
+  
+  .features__heading-secondary {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #205334;
+  }
+  
+  .features__card-text {
+    margin: 1.2rem 0;
+    padding: 0 2.5rem;
+    color: #222;
+  }
+  
+  .features__btn-inline {
+    border: none;
+    border-bottom: 1px solid #205334;
+    color: green;
+    font-size: inherit;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    align-self: flex-end;
+    font-size: 1.3rem;
+    margin: .8rem 2rem 3rem 0;
+  }
+  
+  
