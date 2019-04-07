@@ -133,14 +133,7 @@
     text-decoration: none;
     cursor: pointer;
   }
-  
-  .delivery-address__new-destination {
-    width: 80%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-  }
-  
+   
   .modal-form-group {
     padding-top: 4rem;
   }
@@ -172,5 +165,19 @@
     color: #222;
     font-size: 1.5rem;
   }
+  
+}
+.modal-content {
+  height: 35rem;
+}
+.delivery-address__new-destination-input {
+  width: 80%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin: 2rem 2rem;
 }
 
+.delivery-address__new-destination-heading {
+  color: #222;
+  margin: 1rem auto;
+}

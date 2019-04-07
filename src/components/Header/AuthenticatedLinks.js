@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
@@ -7,9 +7,9 @@ const AuthenticatedLinks = () => {
   const user = localStorage.getItem('firstname');
   return (
     <React.Fragment>
-      <Link to="/dashboard" className="header__dashboard">
+      <NavLink to="/dashboard" className="header__dashboard">
         Dashboard
-      </Link>
+      </NavLink>
       <Dropdown className="auth-dropdown">
         <Dropdown.Toggle className="drop-btn" variant="success" id="dropdown-basic">
           {user}

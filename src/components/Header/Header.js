@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 import Logo from "../Logo/Logo";
@@ -17,12 +17,12 @@ const Header = (props) => {
     <header className="header">
       <Logo/>
       <nav className="header__nav">
-          <Link to="" className="header__how-it-works">
+          <NavLink to="" className="header__how-it-works">
             How it works
-          </Link>
-        {!props.appState.isAuthenticated ?  <Link to="/login" className="header__login">
+          </NavLink>
+        {!props.appState.isAuthenticated ?  <NavLink to="/login" className="header__login">
           Log in
-        </Link>: <AuthenticatedLinks/>}
+        </NavLink>: <AuthenticatedLinks/>}
       </nav>
     </header>
   );

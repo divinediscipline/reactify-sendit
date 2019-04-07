@@ -3,6 +3,7 @@ import authReducer from './authReducer';
 import fetchParcelOrdersReducer from './fetchParcelOrdersReducer';
 import createParcelOrderReducer from './createParcelOrderReducer';
 import viewSingleOrderReducer from './viewSingleOrderReducer';
+// import changeDestinationReducer from './changeDestinationReducer';
 
 export default combineReducers({
   auth: authReducer,
