@@ -1,0 +1,5 @@
+.features__cards {
+  display: flex;
+  margin: 6rem 4rem 0;
+  font-size: 1.6rem;
+}

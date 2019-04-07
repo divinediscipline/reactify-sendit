@@ -1,0 +1,76 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* This defines what 1rem is. In this case it is 10px. */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 3rem;
+}
+
+.logo-box__center {
+  margin: 8rem 0 0rem 0;
+  text-align: center;
+}
+
+.logo-box__link:active, .logo-box__link:hover, .logo-box__link:link, .logo-box__link:visited {
+  text-decoration: none;
+  color: #222;
+}
+
+.logo-box__logo {
+  font-size: 3.5rem;
+  color: #205334;
+}
+
+.logo-box__text {
+  font-family: 'Pattaya', sans-serif;
+  font-size: 4rem;
+  color: #205334;
+  text-transform: uppercase;
+}
+
+/* .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  background-color: #bfe6ce;
+  color: #777;
+  font-size: 1.4rem;
+} */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #bfe6ce;
+  color: #777;
+  text-align: center;
+  height: 8rem;
+  font-size: 1.4rem;
+}
+
+.footer>span {
+  margin-right: 3rem;
+}

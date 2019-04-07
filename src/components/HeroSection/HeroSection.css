@@ -1,0 +1,49 @@
+.hero {
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../img/hero-bg3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 54rem;
+  position: relative;
+}
+
+.hero__info {
+  position: absolute;
+  bottom: 11rem;
+  left: 3.5rem;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+
+}
+
+.hero__text {
+  animation-name: moveInTop;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+}
+
+.hero__btn {
+  background-color: #51BB7B;
+  padding: 1rem 6rem;
+  border-radius: 100px;
+  display: inline-block;
+  margin-top: 1rem;
+  letter-spacing: .2rem;
+
+  animation: moveInRight 1.5s ease-out;
+}
+
+.hero__btn:hover {
+  background-color: #8ed3a9;
+  color: #222;
+  font-weight: bold;
+}
+
+.hero__btn:active,
+.hero__btn:hover,
+.hero__btn:link,
+.hero__btn:visited {
+  text-decoration: none;
+  color: #fff;
+}
