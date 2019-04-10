@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Joi from 'joi-browser';
+import { Circle } from 'better-react-spinkit';
 import { Link } from 'react-router-dom';
 import { signupAction } from '../../actions/authAction';
 
@@ -7,7 +9,8 @@ import Logo from '../Logo/Logo';
 import '../App/App.css';
 import './SignUp.css';
 
-class SignUp extends Component {
+
+ export class SignUp extends Component {
   state = {
     account: {
       firstname: '',
@@ -15,18 +18,68 @@ class SignUp extends Component {
       email: '',
       phonenumber: '',
       password: '',
-      password_confirmation: ''
-    }
+      password_confirmation: '',
+    },
+    errors: {
+
+    },
   };
+
+  schema = {
+    firstname: Joi.string()
+      .alphanum()
+      .min(3)
+      .max(20)
+      .required()
+      .label('First Name'),
+    lastname: Joi.string()
+      .alphanum()
+      .min(3)
+      .max(20)
+      .required()
+      .label('Last Name'),
+    email: Joi.string()
+      .email({ minDomainAtoms: 2 })
+      .required()
+      .label('Email'),
+    phonenumber: Joi.number().integer().label('Phone Number'),
+    password: Joi.string()
+      .min(4)
+      .max(20)
+      .required()
+      .label('Password'),
+      password_confirmation: Joi.string().required().valid(Joi.ref('password')).options({
+        language: {
+          any: {
+            allowOnly: '!!Passwords do not match',
+          }
+        } 
+      }),
+  };
+
+  validate = () => {
+    const { error } = Joi.validate(this.state.account, this.schema, { abortEarly: false });
+    if (!error) return null;
+    const errors = {};
+    for (let item of error.details) errors[item.path[0]] = item.message;
+    return errors;
+  };
+
   handleSubmit = e => {
     e.preventDefault();
+
+    const errors = this.validate();
+    console.log(errors);
+    this.setState({ errors: errors || {} });
+    if (errors) return;
+
     const data = {
       firstname: this.state.account.firstname,
       lastname: this.state.account.lastname,
       email: this.state.account.email,
       phonenumber: this.state.account.phonenumber,
       password: this.state.account.password,
-      password_confirmation: this.state.account.password_confirmation
+      password_confirmation: this.state.account.password_confirmation,
     };
     console.log('>>>>>>>>>', data);
     this.props.signupAction(data, this.props.history);
@@ -38,25 +91,18 @@ class SignUp extends Component {
     this.setState({ account });
   };
 
-  // componentDidUpdate() {}
   render() {
-    const { account } = this.state;
-    const { error } = this.props.signup;
+    const { account, errors } = this.state;
     return (
       <div className="wrapper-gradient-bg">
         <div className="logo-box__center">
           <Logo />
         </div>
         <div className="main-section">
-          <form
-            id="signup-form"
-            className="signup-form"
-            onSubmit={this.handleSubmit}
-          >
+          <form id="signup-form" className="signup-form" onSubmit={this.handleSubmit}>
             <h2 id="create-account" className="signup-form__heading">
               Create account
             </h2>
-            {error && <div>{error}</div>}
             <div className="signup-form__form-group">
               <label htmlFor="firstname">First Name</label>
               <input
@@ -67,8 +113,9 @@ class SignUp extends Component {
                 value={account.firstname}
                 id="firstname"
                 name="firstname"
-                required
+               
               />
+              {errors && <small className="login-error">{errors.firstname}</small>}
               <label htmlFor="lastname">Last Name</label>
               <input
                 className="signup-form__input"
@@ -77,8 +124,9 @@ class SignUp extends Component {
                 value={account.lastName}
                 id="lastname"
                 name="lastname"
-                required
+                // required
               />
+              {errors && <small className="login-error">{errors.lastname}</small>}
               <label htmlFor="email">Email</label>
               <input
                 className="signup-form__input"
@@ -87,8 +135,9 @@ class SignUp extends Component {
                 value={account.email}
                 id="email"
                 name="email"
-                required
+                
               />
+              {errors && <small className="login-error">{errors.email}</small>}
               <label htmlFor="phoneno">Phone Number</label>
               <input
                 className="signup-form__input"
@@ -97,8 +146,9 @@ class SignUp extends Component {
                 value={account.phonenumber}
                 id="phoneno"
                 name="phonenumber"
-                required
+                // required
               />
+              {errors && <small className="login-error">{errors.phonenumber}</small>}
               <label htmlFor="password">Password</label>
               <input
                 className="signup-form__input"
@@ -107,8 +157,9 @@ class SignUp extends Component {
                 value={account.password}
                 id="password"
                 name="password"
-                required
+                // required
               />
+              {errors && <small className="login-error">{errors.password}</small>}
               <label htmlFor="password-confirm">Confirm password</label>
               <input
                 className="signup-form__input"
@@ -117,11 +168,17 @@ class SignUp extends Component {
                 value={account.password_confirmation}
                 id="password-confirm"
                 name="password_confirmation"
-                required
+                // required
               />
+              {errors && <small className="login-error">{errors.password_confirmation}</small>}
             </div>
             <button className="signup-form__button" type="submit">
               sign up
+              {this.props.signup.isLoading && (
+                <span className="button-loading">
+                  <Circle color={'rgba(255,255,255,1)'} />
+                </span>
+              )}
             </button>
             <p className="signup-form__login-link-text">
               Already have an account?
@@ -136,10 +193,10 @@ class SignUp extends Component {
   }
 }
 const mapStateToProps = state => ({
-  signup: state.auth
+  signup: state.auth,
 });
 
 export default connect(
   mapStateToProps,
-  { signupAction }
+  { signupAction },
 )(SignUp);

@@ -15,7 +15,7 @@ const OrderCard = ({ displayedDate, parcelId, status, parcelDesc }) => {
       </div>
       <div className="order-cards__field-group">
         <h5 className="order-cards__status-heading">Status</h5>
-        <p className="order.status">{status}</p>
+        <p className={status}>{status}</p>
       </div>
       <div className="order-cards__field-group">
         <h5 className="order-cards__desc-heading">Parcel description</h5>

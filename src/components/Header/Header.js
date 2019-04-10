@@ -17,9 +17,6 @@ const Header = (props) => {
     <header className="header">
       <Logo/>
       <nav className="header__nav">
-          <NavLink to="" className="header__how-it-works">
-            How it works
-          </NavLink>
         {!props.appState.isAuthenticated ?  <NavLink to="/login" className="header__login">
           Log in
         </NavLink>: <AuthenticatedLinks/>}

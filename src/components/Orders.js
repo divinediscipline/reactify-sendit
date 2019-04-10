@@ -11,11 +11,16 @@ class Orders extends Component {
   render() {
     const { allUserOrders, isLoading } = this.props.allUserParcelOrders;
     if (isLoading) {
-      return <h1>Loading</h1>;
+      return (
+        <div
+          className="carousel-spinner
+      spinner-grow spinner-grow-lg text-primary"
+        />
+      );
     }
     if (!allUserOrders.data) {
       return (
-        <p className="default-text">
+        <p className="orders-default-text">
           You have no delivery orders. Create one by clicking on the 'New order' button.
         </p>
       );
