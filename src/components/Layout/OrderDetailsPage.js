@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import changeDestinationAction from '../../actions/changeDestinationAction';
 
 
-// let updateDestination;
 
 class OrderDetailsPage extends Component {
   state = {
@@ -21,13 +20,10 @@ class OrderDetailsPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('new', this.state.newDestinationData.newDestination);
     const { newDestination } = this.state.newDestinationData;
     
     this.props.changeDestinationAction({destination: newDestination});
-    
-    // updateDestination();
-
+    this.handleClose();
   }
 
   handleChange = ({ currentTarget: input }) => {
@@ -78,7 +74,8 @@ class OrderDetailsPage extends Component {
     const { newDestinationData } = this.state;
     const { singleOrder, isLoading } = this.props.singleOrder;
     if (isLoading || !singleOrder.data) {
-      return <h1>Loading</h1>;
+      return <h1 className="carousel-spinner
+      spinner-grow spinner-grow-lg text-primary">Loading</h1>;
     }
     const {
       parcel_id,
@@ -91,7 +88,7 @@ class OrderDetailsPage extends Component {
       receiversemail,
       pickuptime,
     } = singleOrder.data;
-    console.log('wwwwww', singleOrder.data);
+
     const months = [
       'January',
       'February',
@@ -144,7 +141,7 @@ class OrderDetailsPage extends Component {
                 </p>
                 <p className="parcel__field-group">
                   <span className="parcel__label">Status</span>
-                  <span id="status" className="">
+                  <span id="status" className={status}>
                     {status}
                   </span>
                 </p>

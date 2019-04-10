@@ -7,8 +7,8 @@ import "../App/App.css";
 
 const Logo = () => {
     return ( 
-        <div className="logo-box">
-        <Link to="#" className="logo-box__link">
+        <div className="logo-box logo-box-s">
+        <Link to="/" className="logo-box__link">
           <FontAwesomeIcon
             icon="shipping-fast"
             className="logo-box__logo"

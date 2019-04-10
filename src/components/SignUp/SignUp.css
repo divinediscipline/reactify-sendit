@@ -93,6 +93,7 @@ label {
 
 .signup-form__login-link {
   color: #51BB7B;
+  margin-left: 1rem;
 }
 
 .signup-form__login-link:active,
@@ -100,6 +101,7 @@ label {
 .signup-form__login-link:link,
 .signup-form__login-link:visited {
   text-decoration: none;
+  color: #51BB7B;
 }
 /* 640px  640/16 = 40 */
 @media only screen and (max-width: 40em) {
@@ -112,11 +114,50 @@ label {
     margin: 2rem;
   }
 }
-
+/* 550px  550/16 = 34.4 */
+@media only screen and (max-width: 34.4em) {
+  .header__login {
+    margin-right: 2rem;
+    font-size: 1.6rem;
+    padding: .2rem 1.4rem;
+  }
+  .logo-box {
+    margin-left: 2rem;
+  }
+  .logo-box__text {
+    font-size: 2.5rem;
+  }
+  .logo-box__logo {
+    font-size: 2.5rem;
+  }
+  .auth-dropdown {
+    margin-right: 1.8rem;
+  }
+  .drop-btn {
+    font-size: 1.6rem;
+  }
+}
 /* 370px  370/16 = 23.2 */
 @media only screen and (max-width: 23.2em) {
+  .header__login {
+    margin-right: 1.7rem;
+    font-size: 1.2rem;
+    padding: .1rem 1.2rem;
+  }
   .signup-form__button {
     padding: 1rem 3rem;
+  }
+  .logo-box__logo {
+    font-size: 1.5rem;
+  }
+  .logo-box__text {
+    font-size: 1.5rem;
+  }
+  .logo-box {
+    margin-left: 1.2rem;
+  }
+  .drop-btn {
+    font-size: 1.3rem;
   }
 }
 

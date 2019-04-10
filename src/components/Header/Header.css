@@ -29,7 +29,7 @@
   background-color: #fff;
   color: #51BB7B;
   font-weight: bold;
-  margin: 0 3rem 0 14rem;
+  margin: 0 5rem 0 14rem;
   text-decoration: none;
   font-size: 1.8rem;
   border-radius: 100px;
@@ -39,4 +39,5 @@
 .header__login:hover {
   color: #222;
   font-weight: bold;
+  text-decoration: none;
 }

@@ -1,5 +1,5 @@
 .signin-main-section {
-  max-width: 55rem;
+  max-width: 45rem;
   margin: 2rem auto 5rem;
   background-color: #fff;
   border-radius: 2rem;
@@ -32,7 +32,11 @@
   outline: none;
   border: 1.5px solid #205334;
 }
-
+.login-error {
+  display: block;
+  font-size: 1.4rem;
+  color: orangered;
+}
 .login-form__button {
   display: inline-block;
   margin: 2rem 0 .8rem;
@@ -43,6 +47,10 @@
   font-size: 1.6rem;
   text-transform: uppercase;
   color: #fff;
+}
+.button-loading {
+  float: right;
+  margin-left: 1.5rem;
 }
 
 .login-form__button:active,
@@ -65,18 +73,22 @@
 
 .login-form__signup-link {
   color: #51BB7B;
+  margin-left: 1rem;
+}
+.Toastify__toast-body {
+  font-size: 3rem;
 }
 
 .login-form__signup-link:active,
 .login-form__signup-link:hover,
-.login-form__signup-link:link,
 .login-form__signup-link:visited {
   text-decoration: none;
+  color: #51BB7B;
 }
 
 /* 640px  640/16 = 40 */
 @media only screen and (max-width: 40em) {
-  .main-section {
+  .signin-main-section {
     margin-left: .8rem;
     margin-right: .8rem;
   }

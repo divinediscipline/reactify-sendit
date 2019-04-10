@@ -23,20 +23,24 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: true,
       };
-    case 'CHANGE_DESTINATION_REQUEST_SUCCESS':
-      console.log('firing!!!');
-      console.log('firing!!!2', { ...state.singleOrder.data, ...action.payload });
+    case 'CHANGE_DESTINATION_REQUEST_SUCCESS': {
+      const newData = { ...state.singleOrder };
+      newData.data.destination = action.payload.destination;
       return {
         ...state,
         isLoading: false,
-        singleOrder: { ...state.singleOrder.data, ...action.payload },
+        singleOrder: newData,
       };
-    case 'CANCEL_ORDER_REQUEST_SUCCESS':
-      console.log('called', { ...state.singleOrder.data, ...action.payload });
+    }
+
+    case 'CANCEL_ORDER_REQUEST_SUCCESS': {
+      const newData = { ...state.singleOrder };
+      newData.data.status = action.payload.status;
       return {
         ...state,
-        singleOrder: { ...state.singleOrder.data, ...action.payload },
+        singleOrder: newData,
       };
+    }
 
     case 'SET_ERROR_MSG':
       return { ...state, isLoading: false, error: action.payload };
