@@ -70,7 +70,7 @@
   .create-order-btn > span {
     display: none;
   }
-  .button-add-desktop {
-    margin-right: 0 !important;
+  .btn-add-desktop {
+    margin-left: 8.5px;
   }
 }

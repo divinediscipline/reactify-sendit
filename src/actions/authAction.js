@@ -8,7 +8,7 @@ export const signupAction = (data, history) => async (dispatch) => {
       'https://thawing-woodland-89801.herokuapp.com/api/v1/auth/signup',
       data,
     );
-    console.log('axiosResponse', response.data);
+
     localStorage.setItem('token', response.data.token);
     localStorage.setItem('userid', response.data.user.userid);
     localStorage.setItem('firstname', response.data.user.firstname);
@@ -17,6 +17,7 @@ export const signupAction = (data, history) => async (dispatch) => {
       type: 'SET_CURRENT_USER',
       payload: response.data.user,
     });
+
     history.replace('/dashboard');
   } catch (error) {
     dispatch({
@@ -34,7 +35,6 @@ export const signinAction = (data, history) => async (dispatch) => {
       'https://thawing-woodland-89801.herokuapp.com/api/v1/auth/login',
       data,
     );
-    console.log(response.data);
     localStorage.setItem('token', response.data.token);
     localStorage.setItem('userid', response.data.user.userid);
     localStorage.setItem('firstname', response.data.user.firstname);

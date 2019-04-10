@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import changeDestinationAction from '../../actions/changeDestinationAction';
+import CreateOrderButton from '../common/CreateOrderButton';
 
 
 
@@ -118,6 +119,7 @@ class OrderDetailsPage extends Component {
       return (
         <React.Fragment>
           <Header />
+          <CreateOrderButton/>
           <main className="order-details-page">
             <div className="form-page">
               <h3 className="form-page__heading">Parcel details</h3>

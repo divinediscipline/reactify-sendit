@@ -1,8 +1,9 @@
 import axios from 'axios';
+import React from 'react';
 import { toast } from 'react-toastify';
 
 const createParcelOrderAction = (data, history) => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const userToken = localStorage.getItem('token');
       const response = await axios.post(
@@ -10,7 +11,6 @@ const createParcelOrderAction = (data, history) => {
         data,
         { headers: { 'x-auth': userToken } },
       );
-      console.log('CREATEaxiosResponse', response.data);
       dispatch({
         type: 'CREATE_USER_PARCEL_REQUEST',
         payload: response.data,
