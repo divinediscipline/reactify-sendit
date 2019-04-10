@@ -69,7 +69,6 @@ import './SignUp.css';
     e.preventDefault();
 
     const errors = this.validate();
-    console.log(errors);
     this.setState({ errors: errors || {} });
     if (errors) return;
 
@@ -81,7 +80,6 @@ import './SignUp.css';
       password: this.state.account.password,
       password_confirmation: this.state.account.password_confirmation,
     };
-    console.log('>>>>>>>>>', data);
     this.props.signupAction(data, this.props.history);
   };
 
