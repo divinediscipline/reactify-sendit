@@ -13,9 +13,9 @@ const FeaturesCard = props => {
       <p className="features__card-text features__secure-text">
         {props.cardText}
       </p>
-      <button className="features__btn-inline">
+      {/* <button className="features__btn-inline">
         Learn more <span>&rarr;</span>
-      </button>
+      </button> */}
     </div>
   );
 };

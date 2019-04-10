@@ -24,9 +24,13 @@ body {
   margin-left: 3rem;
 }
 
+
 .logo-box__center {
   margin: 8rem 0 0rem 0;
   text-align: center;
+}
+.logo-box-s {
+  justify-content: center;
 }
 
 .logo-box__link:active, .logo-box__link:hover, .logo-box__link:link, .logo-box__link:visited {
@@ -45,8 +49,13 @@ body {
   color: #205334;
   text-transform: uppercase;
 }
-
-/* .footer {
+.orders-default-text {
+  color: #555;
+  font-size: 3rem;
+  padding: 7rem 0 80rem 3rem;
+  text-align: center;
+}
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,9 +63,9 @@ body {
   background-color: #bfe6ce;
   color: #777;
   font-size: 1.4rem;
-} */
+}
 
-.footer {
+.footer-fixed {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,4 +82,20 @@ body {
 
 .footer>span {
   margin-right: 3rem;
+}
+
+.Toastify__toast--error,
+.Toastify__toast--success {
+  border-radius: 0.25rem;
+  font-family: Helvetica, Arial, sans-serif;
+  min-height: inherit;
+  padding-right: 2rem;
+  position: relative;
+  top: 6rem;
+  right: 1.5rem;
+}
+
+.Toastify__toast--error > .Toastify__toast-body,
+.Toastify__toast--success > .Toastify__toast-body {
+  font-size: 1rem;
 }

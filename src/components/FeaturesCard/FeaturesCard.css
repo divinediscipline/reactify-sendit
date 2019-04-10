@@ -23,7 +23,7 @@
   
   .features__card-text {
     margin: 1.2rem 0;
-    padding: 0 2.5rem;
+    padding: 0 2.5rem 6rem 2.5rem;
     color: #222;
   }
   
@@ -43,4 +43,20 @@
     margin: .8rem 2rem 3rem 0;
   }
   
-  
+  /* 849px  849/16 = 53.0625 */
+@media only screen and (max-width: 53.0625em) {
+  .features__cards {
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .features__card {
+    margin-top: 1rem;
+    flex: 1 1 30rem;
+    margin-left: 0;
+  }
+
+  .features__btn-inline {
+    margin-right: 4rem;
+  }
+}

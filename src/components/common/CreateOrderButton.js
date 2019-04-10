@@ -6,7 +6,7 @@ const CreateOrderButton = () => {
   return (
     <Link to="/new-order" className="create-order-btn">
       <FontAwesomeIcon icon="plus" className="btn-add-desktop" />
-      New order
+      <span>New order</span>
     </Link>
   );
 };

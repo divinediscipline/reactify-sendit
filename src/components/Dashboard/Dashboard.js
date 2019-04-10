@@ -12,7 +12,7 @@ const Dashboard = () => {
       <PrimaryHeading />
       <CreateOrderButton/>
       <Orders/>
-      <Footer/>
+      <Footer fixed />
     </React.Fragment>
   );
 };

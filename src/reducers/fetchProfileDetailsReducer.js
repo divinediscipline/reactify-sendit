@@ -1,25 +1,24 @@
 const initialState = {
-  isAuthenticated: false,
   isLoading: false,
-  user: {},
+  profileDetails: {},
   error: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_CURRENT_USER_LOADING':
-      return { ...state, isLoading: true };
-    case 'SET_CURRENT_USER':
+    case 'FETCH_PROFILE_DETAILS_REQUEST_LOADING':
       return {
         ...state,
-        isAuthenticated: true,
+        isLoading: true,
+      };
+    case 'FETCH_PROFILE_DETAILS_REQUEST_SUCCESS':
+      return {
+        ...state,
         isLoading: false,
-        user: action.payload,
+        profileDetails: action.payload,
       };
     case 'SET_ERROR_MSG':
       return { ...state, isLoading: false, error: action.payload };
-    case 'SIGN_OUT_USER':
-      return initialState;
     default:
       return state;
   }
