@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -19,6 +20,7 @@ export const signupAction = (data, history) => async (dispatch) => {
     });
 
     history.replace('/dashboard');
+    toast.success(<div>Signed up successfully</div>);
   } catch (error) {
     dispatch({
       type: 'SET_ERROR_MSG',
@@ -44,6 +46,7 @@ export const signinAction = (data, history) => async (dispatch) => {
       payload: response.data.user,
     });
     history.replace('/dashboard');
+    toast.success(<div>Logged in successfully</div>);
   } catch (error) {
     dispatch({
       type: 'SET_ERROR_MSG',

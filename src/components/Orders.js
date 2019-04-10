@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fetchParcelOrdersAction from '../actions/fetchParcelOrdersAction';
-import OrderCard from './orderCard';
+import OrderCard from './OrderCard';
 
 class Orders extends Component {
   // state = {  }

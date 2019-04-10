@@ -1,8 +1,8 @@
+import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const changeDestinationAction = data => async (dispatch) => {
-//   dispatch({ type: 'CHANGE_DESTINATION_REQUEST_LOADING' });
   try {
     const userToken = localStorage.getItem('token');
     const urlParams = new URLSearchParams(window.location.search);
@@ -15,13 +15,11 @@ const changeDestinationAction = data => async (dispatch) => {
     const newDestinationObj = {
       destination: response.data.data.destination,
     };
-    console.log('CREATE22', response.data.data.destination);
-    console.log('CREATE', newDestinationObj);
     dispatch({
       type: 'CHANGE_DESTINATION_REQUEST_SUCCESS',
       payload: newDestinationObj,
     });
-    //   toast.success(<div>Order created successfully</div>);
+    toast.success(<div>Destination changed successfully</div>);
   } catch (error) {
     dispatch({
       type: 'SET_ERROR_MSG',

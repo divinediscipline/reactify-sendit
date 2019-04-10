@@ -5,12 +5,10 @@ const fetchProfileDetailsAction = () => async (dispatch) => {
   try {
     const userToken = localStorage.getItem('token');
     const userid = localStorage.getItem('userid');
-    // console.log('printed usertoken', userToken);
     const response = await axios.get(
       `https://thawing-woodland-89801.herokuapp.com/api/v1/users/${userid}/profile`,
       { headers: { 'x-auth': userToken } },
     );
-    console.log('fetchResponse', response.data);
     dispatch({
       type: 'FETCH_PROFILE_DETAILS_REQUEST_SUCCESS',
       payload: response.data,

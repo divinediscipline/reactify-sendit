@@ -22,8 +22,6 @@ class NewOrderPage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    console.log('formdata', this.state.orderFormData);
     const {
       parcelDescription,
       pickUpState,

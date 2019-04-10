@@ -5,12 +5,10 @@ const fetchParcelOrdersAction = () => async (dispatch) => {
   try {
     const userToken = localStorage.getItem('token');
     const userid = localStorage.getItem('userid');
-    // console.log('printed usertoken', userToken);
     const response = await axios.get(
       `https://thawing-woodland-89801.herokuapp.com/api/v1/users/${userid}/parcels`,
       { headers: { 'x-auth': userToken } },
     );
-    console.log('fetchAxiosResponse', response.data);
     dispatch({
       type: 'FETCH_USER_PARCELS_REQUEST',
       payload: response.data,

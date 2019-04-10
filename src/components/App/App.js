@@ -26,7 +26,6 @@ import ProfilePage from '../Layout/ProfilePage';
 if (localStorage.getItem('token')) {
   const token = localStorage.getItem('token');
   const decodedToken = jwtDecode(token);
-  console.log('decodedToken', decodedToken);
   if (decodedToken) {
     store.dispatch(setIsAuthenticated(decodedToken));
   } else {
@@ -41,17 +40,17 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-        <>
+          <>
           <ToastContainer autoClose={3000} position="top-right" />
-          <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/profile" component={ProfilePage} />
-            <Route path="/order-details" component={OrderDetailsPage} />
-            <Route path="/new-order" component={NewOrderPage} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={SignIn} />
-            <Route path="/" component={HomePage} />
-          </Switch>
+            <Switch>
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/profile" component={ProfilePage} />
+              <Route path="/order-details" component={OrderDetailsPage} />
+              <Route path="/new-order" component={NewOrderPage} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/login" component={SignIn} />
+              <Route path="/" component={HomePage} />
+            </Switch>
           </>
         </BrowserRouter>
       </div>

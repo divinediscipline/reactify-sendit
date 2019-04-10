@@ -11,8 +11,6 @@ import AuthenticatedLinks from "./AuthenticatedLinks";
 
 
 const Header = (props) => {
-  console.log('appStatehh', props.appState);
-  console.log('appState', props.history);
   return (
     <header className="header">
       <Logo/>

@@ -40,19 +40,14 @@ class SignIn extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const errors = this.validate();
-    console.log(errors);
     this.setState({ errors: errors || {} });
     if (errors) return;
-    // this.setState({ isLoaded: true });
 
     const data = {
       email: this.state.account.email,
       password: this.state.account.password,
     };
-    console.log('>>>>>>>>>', data);
-    // console.log('>load', this.state.isLoading);
     this.props.signinAction(data, this.props.history);
-    // this.setState({ isLoaded: false });
   };
 
   handleChange = ({ currentTarget: input }) => {
@@ -70,7 +65,6 @@ class SignIn extends Component {
         <div className="signin-main-section">
           <form id="login-form" onSubmit={this.handleSubmit} className="login-form">
             <h2 className="login-form__heading">Welcome Back</h2>
-            {/* {error && <div>{error}</div>} */}
             <div className="login-form__form-group">
               <label htmlFor="email">Email</label>
               <input

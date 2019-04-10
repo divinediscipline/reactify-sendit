@@ -14,7 +14,6 @@ class ProfilePage extends Component {
     if (isLoading || !profileDetails.data) {
       return <h1>Loading</h1>;
     }
-    console.log('your profile', profileDetails);
     const {
       firstName,
       lastName,
